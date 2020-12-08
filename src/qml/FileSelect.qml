@@ -16,7 +16,12 @@ Item {
 
     property string file: ""
     onFileChanged: {
-        file = file.replace(/^(file:\/\/)/,"");
+        if(os.indexOf("win") > -1)    {
+            var fileRegex = /^(file:\/\/\/)/
+        }   else    {
+            var fileRegex = /^(file:\/\/)/
+        }
+        file = file.replace(fileRegex,"");
 
         console.log(suffix, "changed", file)
         if(file == "")  {
