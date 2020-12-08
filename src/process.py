@@ -10,7 +10,7 @@ def convert(flags, binary=None, logfile=None, callback=lambda: None):
         binary = "./ctw-core/ctw-core"
         if not sys.platform.startswith("darwin"):
             binary = "."+binary+".exe"
-            binary = os.path.abspath(binary)
+        binary = os.path.abspath(binary)
 
     if logfile is None or logfile == "":
         logfile = ""
