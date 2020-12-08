@@ -7,9 +7,10 @@ def escape(s: str) -> str:
 
 def convert(flags, binary=None, logfile=None, callback=lambda: None):
     if binary is None or binary == "":
-        binary = "./ctw"
+        binary = "../ctw/ctw"
         if not sys.platform.startswith("darwin"):
             binary += ".exe"
+            binary = os.path.abspath(binary)
 
     if logfile is None or logfile == "":
         logfile = ""
