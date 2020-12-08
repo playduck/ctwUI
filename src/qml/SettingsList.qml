@@ -57,7 +57,7 @@ Rectangle {
                 placeholderText: ";"
             }
             InfoButton {
-                text: qsTr("Characher seperating Value fields")
+                text: qsTr("Trennzeichen zwischen Werten")
             }
             
             
@@ -74,7 +74,7 @@ Rectangle {
                 placeholderText: "."
             }
             InfoButton {
-                text: qsTr("Characher used as decimal point")
+                text: qsTr("Zeichen gibt die Dezimalstelle an")
             }
             
             
@@ -94,13 +94,13 @@ Rectangle {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             }      
             InfoButton {
-                text: qsTr("Characher used as decimal point")
+                text: qsTr("Eigene X-Achse erstellen. Jedes Sample wird eine Sekunde gehalten.")
             }
                     
             
             Text {
                 color: root.text
-                text: qsTr("Bits per Sample")
+                text: qsTr("Bits pro Sample")
                 font.pixelSize: 12
                 horizontalAlignment: Text.AlignRight
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -112,7 +112,7 @@ Rectangle {
                 currentIndex: 1
             }
             InfoButton {
-                text: qsTr("Bits in one Sample, u8 is unsigned, 32f is floating point")
+                text: qsTr("Bits in einem Sample. u8 ist unsigned. 32f ist floating point.")
             }
             
             
@@ -137,7 +137,7 @@ Rectangle {
             
             Text {
                 color: root.text
-                text: qsTr("Max Input Value")
+                text: qsTr("Max Input")
                 font.pixelSize: 12
                 horizontalAlignment: Text.AlignRight
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -150,13 +150,13 @@ Rectangle {
                 validator: DoubleValidator {}
             }
             InfoButton {
-                text: qsTr("Value which will equal 100% output, leave None to scale data automatically.")
+                text: qsTr("Wert in der CSV der 100% ausgabe der wav entspricht. Bei None wird der größte Wert der Eingabe dafür genutzt.")
             }
             
             
             Text {
                 color: root.text
-                text: qsTr("DC Bias Value")
+                text: qsTr("DC Bias")
                 font.pixelSize: 12
                 horizontalAlignment: Text.AlignRight
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -170,7 +170,7 @@ Rectangle {
 
             }
             InfoButton {
-                text: qsTr("Value which will be added to all Samples.")
+                text: qsTr("Wert der allen Samples hinzugefügt wird.")
             }
             
             
@@ -188,7 +188,7 @@ Rectangle {
                 currentIndex: 0
             }
             InfoButton {
-                text: qsTr("Method to clip samples above the possible output.")
+                text: qsTr("Methode mit der Daten geclipped werden.")
             }
             
             
@@ -206,7 +206,7 @@ Rectangle {
                 currentIndex: 1
             }
             InfoButton {
-                text: qsTr("Method to interpolate between samples.")
+                text: qsTr("Methode um Sample zu interpolieren.")
             }
             
             
@@ -227,7 +227,7 @@ Rectangle {
                 
             }
             InfoButton {
-                text: qsTr("If checked, multiple Y-Axies wille be rendered to mltiple channels in one file.")
+                text: qsTr("Verschiedene Y-Achsen werden als weitere Kanäle hinzugefügt. Sonst seperate Dateien.")
             }
             
         }

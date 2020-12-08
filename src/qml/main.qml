@@ -114,7 +114,7 @@ ApplicationWindow {
 
                     Layout.fillWidth: true
 
-                    placeholder: qsTr("csv file")
+                    placeholder: qsTr("csv Datei")
                     suffix: "csv"
 
                     onFileChanged: {
@@ -130,7 +130,7 @@ ApplicationWindow {
                     Layout.fillWidth: true
 
                     enabled: inputFile.valid
-                    placeholder: qsTr("wav file")
+                    placeholder: qsTr("wav Datei")
                     suffix: "wav"
 
                     selectExisting: false
@@ -182,7 +182,7 @@ ApplicationWindow {
 
                     onAboutToShow: {
                         busyIndicator.running = true
-                        busyText.text = "konvertierung läuft..."
+                        busyText.text = "Konvertierung läuft..."
 
                         let data = {
                             "inputSeperator": settings.inputSeperator,
@@ -304,7 +304,7 @@ ApplicationWindow {
             id: preferences
             visible: titlebar.state === this
             anchors.fill: parent
-            title: qsTr("Preferences")
+            title: qsTr("Einstellungen")
 
             ColumnLayout {
                 anchors.left: parent.left
@@ -325,7 +325,7 @@ ApplicationWindow {
                     id: preferencesBinPath
                     Layout.fillWidth: true
 
-                    placeholder: qsTr("ctw binary")
+                    placeholder: qsTr("ctw-core")
                     suffix: ""
 
                     selectExisting: true
@@ -333,7 +333,7 @@ ApplicationWindow {
                     onFileChanged: bridge.setBinary(file)
                 }
                 Text {
-                    text: qsTr("Wenn kein Pfad zur Binary angegeben wird, wird die binary erst im gleichen Verzeichniss gesucht, dannch über die Path Variable.")
+                    text: qsTr("Pfad zur ausführbaren ctw-core Datei (.exe auf Windows).")
                     wrapMode: Text.WordWrap
                     Layout.fillWidth: true
                     color: root.text
@@ -354,7 +354,7 @@ ApplicationWindow {
                     id: preferencesLogPath
                     Layout.fillWidth: true
 
-                    placeholder: qsTr("log file")
+                    placeholder: qsTr("log Datei")
                     suffix: "log"
 
                     selectExisting: false
@@ -411,7 +411,7 @@ ApplicationWindow {
                 }
 
                 TextArea {
-                    text: qsTr("using:\n - PyQt\n -QML \n - Python 3.9\n - Stackoverflow <3 ")
+                    text: qsTr("mit:\n - PyQt\n -QML \n - Python 3.9\n - Stackoverflow <3 ")
                     horizontalAlignment: Text.AlignLeft
                     hoverEnabled: false
                     placeholderTextColor: "#00000000"

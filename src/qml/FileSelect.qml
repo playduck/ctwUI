@@ -23,7 +23,6 @@ Item {
         }
         file = file.replace(fileRegex,"");
 
-        console.log(suffix, "changed", file)
         if(file == "")  {
             valid = false
         }   else    {
@@ -60,7 +59,7 @@ Item {
         anchors.left: userTextInput.right
         anchors.leftMargin: 10
 
-        text: qsTr("Select")
+        text: qsTr("Auswählen")
         onClicked: fileDialog.open()
         enabled: fileSelect.enabled
     }
@@ -68,7 +67,7 @@ Item {
 
     FileDialog {
         id: fileDialog
-        title: qsTr("Choose Input File")
+        title: qsTr("Datei Auswählen")
 
         selectExisting: fileSelect.selectExisting
         nameFilters: [ fileSelect.suffix != "" ? fileSelect.placeholder + " (*."+fileSelect.suffix+")" : "*" , "All Files (*)"]

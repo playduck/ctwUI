@@ -65,7 +65,7 @@ Rectangle {
         Text {
             id: prefrencesButton
             color: root.windowText
-            text: qsTr("Prefrences")
+            text: qsTr("Einstellungen")
             font.pixelSize: 12
             opacity:  prefrencesButtonArea.containsMouse ? 1 : 0.4
             smooth: prefrencesButtonArea.containsMouse
