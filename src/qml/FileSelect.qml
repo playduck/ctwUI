@@ -16,7 +16,7 @@ Item {
 
     property string file: ""
     onFileChanged: {
-        if(os.indexOf("win") > -1)    {
+        if(os.startsWith("win"))    {
             var fileRegex = /^(file:\/\/\/)/
         }   else    {
             var fileRegex = /^(file:\/\/)/
