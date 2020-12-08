@@ -9,12 +9,8 @@ def escape(s: str) -> str:
 
 def convert(flags, binary=None, logfile=None, callback=lambda: None):
     if binary is None or binary == "":
-        binary = "./ctw-core/ctw-core"
-        if not sys.platform.startswith("darwin"):
-            binary = "."+binary+".exe"
-            binary = os.path.abspath(binary)
-        else:
-            binary = config.getResource("../../../" + binary)
+        callback(255) # no binary, not my problem
+        return
 
     if logfile is None or logfile == "":
         logfile = ""
