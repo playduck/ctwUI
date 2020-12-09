@@ -187,6 +187,7 @@ ApplicationWindow {
                         let data = {
                             "inputSeperator": settings.inputSeperator,
                             "inputDecimal": settings.inputDecimal,
+                            "inputXAxis": settings.inputXAxis,
                             "inputGenX": settings.inputGenX,
 
                             "inputBPS": settings.inputBPS,

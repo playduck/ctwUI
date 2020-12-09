@@ -17,10 +17,16 @@ def convert(flags, binary=None, logfile=None, callback=lambda: None):
     else:
         logfile = "> "+logfile
 
+    if flags["inputXAxis"] != "":
+        xaxis = "--x-axis " + escape(flags["inputXAxis"])
+    else:
+        xaxis = ""
+
     command = [
         binary,
         "--seperator", escape(flags["inputSeperator"]),
         "--decimal", escape(flags["inputDecimal"]),
+        xaxis,
 
         "--gen-x" if flags["inputGenX"] else "",
 
