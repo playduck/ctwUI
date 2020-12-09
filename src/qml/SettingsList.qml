@@ -12,6 +12,7 @@ Rectangle {
 
     property string inputSeperator: inputSeperator.text || inputSeperator.placeholderText
     property string inputDecimal: inputDecimal.text || inputDecimal.placeholderText
+    property string inputXAxis: inputXAxis.text || inputXAxis.placeholderText
     property bool inputGenX: inputGenX.checked
 
     property string inputBPS: inputBPS.currentValue
@@ -28,8 +29,8 @@ Rectangle {
         anchors.leftMargin: 15
         anchors.bottomMargin: 15
         anchors.topMargin: 15
-        
-        
+
+
         GridLayout {
             id: gridLayout
             anchors.left: parent.left
@@ -41,9 +42,9 @@ Rectangle {
             anchors.leftMargin: 0
             Layout.fillWidth: true
             columns: 3
-            
+
             layoutDirection: Qt.LeftToRight
-            
+
             Text {
                 text: qsTr("Seperator")
                 color: root.text
@@ -53,14 +54,15 @@ Rectangle {
             }
             UserTextInput {
                 id: inputSeperator
+                Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 placeholderText: ";"
             }
             InfoButton {
                 text: qsTr("Trennzeichen zwischen Werten")
             }
-            
-            
+
+
             Text {
                 text: qsTr("Dezimalstelle")
                 color: root.text
@@ -70,14 +72,32 @@ Rectangle {
             }
             UserTextInput {
                 id: inputDecimal
+                Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 placeholderText: "."
             }
             InfoButton {
                 text: qsTr("Zeichen gibt die Dezimalstelle an")
             }
-            
-            
+
+            Text {
+                text: qsTr("X-Achse")
+                color: root.text
+                font.pixelSize: 12
+                horizontalAlignment: Text.AlignRight
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+            }
+            UserTextInput {
+                id: inputXAxis
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                placeholderText: ""
+            }
+            InfoButton {
+                text: qsTr("Name der X-Achse in der CSV. Wenn leer, wird die erste Spalte verwendet. Wenn nur eine Spalte existiert, wird die X-Achse automatisch erstellt.")
+            }
+
+
             Text {
                 text: qsTr("X-Achse erstellen")
                 color: root.text
@@ -92,12 +112,12 @@ Rectangle {
                 bottomPadding: 0
                 topPadding: 0
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-            }      
+            }
             InfoButton {
                 text: qsTr("Eigene X-Achse erstellen. Jedes Sample wird eine Sekunde gehalten.")
             }
-                    
-            
+
+
             Text {
                 color: root.text
                 text: qsTr("Bits pro Sample")
@@ -114,8 +134,8 @@ Rectangle {
             InfoButton {
                 text: qsTr("Bits in einem Sample. u8 ist unsigned. 32f ist floating point.")
             }
-            
-            
+
+
             Text {
                 color: root.text
                 text: qsTr("Samplerate")
@@ -133,8 +153,8 @@ Rectangle {
             InfoButton {
                 text: qsTr("Samplerate in Hz")
             }
-            
-            
+
+
             Text {
                 color: root.text
                 text: qsTr("Max Input")
@@ -152,8 +172,8 @@ Rectangle {
             InfoButton {
                 text: qsTr("Wert in der CSV der 100% ausgabe der wav entspricht. Bei None wird der größte Wert der Eingabe dafür genutzt.")
             }
-            
-            
+
+
             Text {
                 color: root.text
                 text: qsTr("DC Bias")
@@ -172,8 +192,8 @@ Rectangle {
             InfoButton {
                 text: qsTr("Wert der allen Samples hinzugefügt wird.")
             }
-            
-            
+
+
             Text {
                 color: root.text
                 text: qsTr("Clipping")
@@ -190,8 +210,8 @@ Rectangle {
             InfoButton {
                 text: qsTr("Methode mit der Daten geclipped werden.")
             }
-            
-            
+
+
             Text {
                 color: root.text
                 text: qsTr("Interpolation")
@@ -208,8 +228,8 @@ Rectangle {
             InfoButton {
                 text: qsTr("Methode um Sample zu interpolieren.")
             }
-            
-            
+
+
             Text {
                 text: qsTr("Multichannel")
                 color: root.text
@@ -224,15 +244,15 @@ Rectangle {
                 bottomPadding: 0
                 topPadding: 0
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                
+
             }
             InfoButton {
                 text: qsTr("Verschiedene Y-Achsen werden als weitere Kanäle hinzugefügt. Sonst seperate Dateien.")
             }
-            
+
         }
     }
-    
+
 }
 
 /*##^##
